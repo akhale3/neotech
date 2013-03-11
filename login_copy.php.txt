@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Neotech Computers</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="jquery.js" type="text/javascript" language="javascript"></script>
+<script language="javascript">
+$(document).ready(function()
+{
+	$("#login_form").submit(function()
+	{
+		//remove all the class add the messagebox classes and start fading
+		$("#msgbox").removeClass().addClass('messagebox').text('Validating....').fadeIn(1000);
+		//check the username exists or not from ajax
+		$.post("ajax_login.php",{ unamel:$('#unamel').val(),passwdl:$('#passwdl').val(),rand:Math.random() } ,function(data)
+        {
+		  if(data=='yes') //if correct login detail
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('Logging in...').addClass('messageboxok').fadeTo(900,1,
+              function()
+			  { 
+			  	 //redirect to secure page
+				 document.location='home.php';
+			  });
+			  
+			});
+		  }
+		  else 
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('Invalid credentials').addClass('messageboxerror').fadeTo(900,1);
+			});		
+          }
+				
+        });
+ 		return false; //not to post the  form physically
+	});
+	//now call the ajax also focus move from 
+	$("#password").blur(function()
+	{
+		$("#login_form").trigger('submit');
+	});
+});
+</script>
+</head>
+<body>
+<center>
+<div id="navbar">
+<ul>
+<li>Back to Home? Click <a href="index.php">here</a></li><li><span></span></li>
+<li>New to Neotech? Sign up <a href="register.php">here</a></li><li><span></span></li>
+<li><a href="help.html">Tech Support</a></li>
+</div>
+<center>
+<!-- main -->
+<div id="main">
+<div id="logo" style="margin:15px auto"></div>
+<fieldset><legend><b>Login Form</b></legend>
+<center style="color:#15689a">
+<form id="login_form" method="post" action="">
+<table border=0 cellspacing=10>
+<tr><td>Username</td> <td>:</td> <td><input type="text" size="25" id="unamel" name="unamel"></td><td></td></tr><tr></tr>
+<tr><td>Password</td> <td>:</td> <td><input type="password" size="25" id="passwdl" name="passwdl"></td></tr><tr></tr>
+</table>
+<br>
+<input type="submit" id="submit" value="Login">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<input type="reset" id="reset" value="Reset">
+<br>
+<span id="msgbox" style="display:none"></span>
+</form>
+</fieldset>
+<br>
+<div id="headder"><center>
+	<div class="fleft">Copyright © 2011 Neotech Computers Inc.</div>
+	<div class="fright">
+        	<a href="about.html" class="comlink"> About </a> |
+                    <a href="contact.html" class="comlink"> Contact </a> |    
+                    <a href="legal.html" class="comlink"> Legal </a> |    
+                    <a href="sitemap.html" class="comlink"> Sitemap </a>
+	</div>
+	</div class="fclear"></div>
+</body>
+</html>

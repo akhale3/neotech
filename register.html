@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Neotech Computers</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="jquery.js" type="text/javascript" language="javascript"></script>
+<script language="javascript">
+$(document).ready(function()
+{
+	$("#username").blur(function()
+	{
+		//remove all the class add the messagebox classes and start fading
+		$("#msgbox").removeClass().addClass('messagebox').text('Checking...').fadeIn("slow");
+		//check the username exists or not from ajax
+		$.post("user_availability.php",{ user_name:$(this).val() } ,function(data)
+        {
+		  if(data=='no') //if username not avaiable
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('This User name Already exists').addClass('messageboxerror').fadeTo(900,1);
+			});		
+          }
+		  else
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('Username available to register').addClass('messageboxok').fadeTo(900,1);	
+			});
+		  }
+				
+        });
+ 
+	});
+});
+</script>
+</head>
+<body>
+<center>
+<div id="navbar">
+<ul>
+<li>Back to Home &nbsp; Click <a href="index.html">here</a></li><li><span></span></li>
+<li>Already registered? Login <a href="login.html">here</a></li><li><span></span></li>
+<li><a href="#">Tech Support</a></li>
+</div>
+<center>
+<!-- main -->
+<div id="main">
+<div id="logo" style="margin:15px auto"></div>
+<fieldset><legend><b>Registration Form</b></legend>
+<center style="color:#15689a">
+<form id="regform" method="post">
+<table border=0>
+<tr><td>Title</td> <td>:</td> <td><select id="title"> <option value="mr">Mr. <option value="ms" />Ms. <option value="mrs" />Mrs. </select></td></tr><tr></tr>
+<tr><td>First name</td> <td>:</td> <td><input type="text" size="25" id="fname"></td></tr><tr></tr>
+<tr><td>Last name</td> <td>:</td> <td><input type="text" size="25" id="lname"></td></tr><tr></tr>
+<tr><td>User name</td> <td>:</td> <td><div><input type="text" size="25" id="username"></td> <td><span id="msgbox" style="display:none"></span></div></td></tr><tr></tr>
+<tr><td>Password</td> <td>:</td> <td><input type="password" size="25" id="passwd1"></td></tr><tr></tr>
+<tr><td>Re-enter Password</td> <td>:</td> <td><input type="password" size="25" id="passwd2"></td></tr><tr></tr>
+<tr><td>Billing address</td> <td>:</td> <td><textarea id="billadd" rows="5" cols="21"></textarea></td></tr><tr></tr>
+<tr><td>Shipping address</td> <td>:</td> <td><textarea id="shipadd" rows="5" cols="21"></textarea></td></tr><tr></tr>
+<tr><td>Contact number</td> <td>:</td> <td><input type="text" size="25" id="phone"></td></tr><tr></tr>
+</table>
+<input type="button" id="submit" value="Submit" onclick="validate()">
+<span>&nbsp;&nbsp;</span>
+<input type="reset" id="reset" value="Reset">
+</form>
+</fieldset>
+<br>
+<div id="headder"><center>
+	<div class="fleft">Copyright © 2011 Neotech Computers Inc.</div>
+	<div class="fright">
+        	<a href="#" class="comlink"> About </a> |
+                    <a href="#" class="comlink"> Contact </a> |    
+                    <a href="#" class="comlink"> Legal </a> |    
+                    <a href="#" class="comlink"> Sitemap </a>
+	</div>
+	</div class="fclear"></div>
+</body>
+</html>

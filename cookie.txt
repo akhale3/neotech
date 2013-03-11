@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>Left Frame
+</TITLE>
+</HEAD>
+<BODY bgcolor = "black">
+<SCRIPT LANGUAGE="JavaScript">
+function setCookie(name, value) {
+document.cookie=name+"="+value;
+}
+function getCookie(name) {
+  var coo=document.cookie.split(/;[\s]?/);
+  for(var i=0; i<coo.length; i++) {
+    var coo2=coo[i].split("=");
+    if(coo2[0]==name) return coo2[1];
+  }
+  return "";
+}
+function hint() {
+alert("The Audience believes the answer is D by 95%.");
+}
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+function setCookie2(name, value) {
+document.cookie=name+"="+value;
+}
+function getCookie2(name) {
+var coo=document.cookie.split(";");
+for(var i=0; i<coo.length; i++) {
+var coo2=coo[i].split("=");
+if(coo2[0]==name) return coo2[1];
+}
+return "";
+}
+function hint2() {
+alert("A and C are both wrong.");
+}
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+function setCookie3(name, value) {
+document.cookie=name+"="+value;
+}
+function getCookie3(name) {
+var coo=document.cookie.split(";");
+for(var i=0; i<coo.length; i++) {
+var coo2=coo[i].split("=");
+if(coo2[0]==name) return coo2[1];
+}
+return "";
+}
+function hint3() {
+alert("Your phone a friend believes it's D.");
+}
+</SCRIPT>
+<TABLE>
+<TR>
+<TD>
+<FORM>
+<input type="button" id="btn1" value="Ask The Audience" onclick="hint();setCookie(this.id, 'true');this.disabled=true;">
+<script type="text/javascript">
+if(getCookie("btn1")=="true") document.getElementById("btn1").disabled=true;
+</script></FORM>
+</CENTER>
+</FORM>
+</TD>
+<TD>
+<FORM>
+<input type="button" id="btn1" value="50:50" onclick="hint2();setCookie2(this.id, 'true');this.disabled=true;">
+<script type="text/javascript">
+if(getCookie2("btn1")=="true") document.getElementById("btn1").disabled=true;
+</script></FORM>
+</CENTER>
+</FORM>
+</TD>
+<TD>
+<FORM>
+<input type="button" id="btn1" value="Phone A Friend" onclick="hint3();setCookie3(this.id, 'true');this.disabled=true;">
+<script type="text/javascript">
+if(getCookie3("btn1")=="true") document.getElementById("btn1").disabled=true;
+</script></FORM>
+</CENTER>
+</FORM>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+Your input button code would be something like
+Code:
+<input type="button" id="btn1" value="Lifeline" onclick="hint();setCookie(this.id, 'true');this.disabled=true;">
+<script type="text/javascript">
+if(getCookie("btn1")=="true") document.getElementById("btn1").disabled=true;
+</script>

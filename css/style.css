@@ -1,0 +1,316 @@
+* {margin:0;padding:0}
+#body {background-color:#009;width:820}
+.fleft {float:left}
+.fright {float:right}
+.fclear {clear:both}
+.inner_copy, .inner_copy a {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
+a, a:hover {text-decoration:none}
+img {border:0}
+fieldset {border:1px solid #15689a;margin-top:20px}
+legend {font-family:Arial, Helvetica, sans-serif;font-size:20px;color:#15689a}
+.clear {clear:both;height:0;font-size:0}
+/* Testimonials */
+h1 {margin:2px 0 0 5px;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#285f80}
+h2 {margin:0 0 10px 55px;font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#424242;font-weight:normal}
+h3 {}
+h4 {font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#424242;font-weight:normal}
+.label {margin:8px 0 5px;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#7f7f7f;font-weight:bold}
+.label2 {margin:5px 0 8px;font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#7f7f7f;font-weight:normal}
+a.comlink {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c5679}
+a.companyname {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c5679;font-weight:bold;text-decoration:underline}
+.normalcon {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#424242;
+	font-weight:normal;
+	text-align:justify;
+	margin: 10px;
+}
+.redborder {border:1px solid #f00}
+/* main */
+#main {margin:0 auto;width:800px}
+/* Left sidebar */
+#LTsidebar {float:left;width:213px}
+#logo {margin:60px auto 0;width:526px;height:143px;background:url(../img/logo.png) no-repeat top left}
+/* Box */
+.boxheadRT {float:left;height:21px;background:url(../img/box_headder.jpg) no-repeat top left}
+.boxheadLT {float:right;width:18px;height:21px;background:url(../img/box_headder.jpg) no-repeat top right}
+.boxbottRT {float:left;width:5px;height:11px;background:url(../img/box_bottom.jpg) no-repeat top left}
+.boxmain {margin:0;float:left;width:100%;overflow:hidden}
+.boxmainRT {margin-bottom:-2000px;padding:0 8px 2000px;float:left;width:auto;border-left:1px solid #a4c2e1}
+.boxmainLT {margin-bottom:-2000px;padding-bottom:2000px;float:right;width:5px;background:url(../img/box_Rshadow.jpg) repeat-y top right}
+.boxbottLT {float:right;height:11px;background:url(../img/box_bottom.jpg) no-repeat top right}
+/* Quick Search */
+#quicksearch {margin:40px 0 0 17px;width:180px}
+#quickheadRT {width:162px}
+#quickbottLT {width:175px}
+/* Categories */
+#categories {margin:20px 0 0 17px;width:180px}
+#categorieheadRT {width:162px}
+#categoriebottLT {width:175px}
+.boxmainRT ul {margin-bottom:15px;float:left;list-style:none}
+.boxmainRT ul li {float:left;width:144px;height:21px;background:url(../img/seprator.jpg) repeat-x top left}
+.boxmainRT ul li a {font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#1c5679}
+/* Right sidebar */
+#RTsidebar {float:right;width:560px}
+#headder {float:left;width:100%;background:#ebebeb}
+#headder p {margin:4px 12px 8px}
+#navbar {margin-top:5px;width:564px;height:31px;position:relative;background:url(../img/navbar.jpg) no-repeat top}
+#navbar ul {float:left;list-style:none}
+#navbar ul li {margin:2px 11px;float:left}
+#navbar ul li span {float:left;width:2px;height:23px;background:url(../img/nav_Divider.jpg) no-repeat top left}
+#navbar ul li a {font-family:Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;color:#285f80}
+#products {margin:15px 0;float:left;width:100%}
+#products img, #products div {float:left}
+#pro {width:180px}
+#products div p {margin-left:20px;float:left;width:25px;font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;text-align:right;color:#424242}
+#bigdivider {float:left;width:1px;height:162px;background:url(../img/BigDivider.jpg) no-repeat top left}
+#buyit {margin:0 10px 0;float:right;width:60px;height:20px;background:url(../img/btn_buyit.jpg) no-repeat top left}
+#productdivider {margin:30px 0;float:left;width:100%;height:1px;background:url(../img/break.jpg) repeat-x top left}
+#content {margin-top:40px;float:left;width:100#}
+#login {margin:25px 0 0;float:right;width:46%}
+#loginheadRT {width:239px}
+#loginbottLT {width:252px}
+#add {margin:25px 0 0 10px;float:right;width:50%}
+#addheadRT {width:262px}
+#addbottLT {width:275px}
+.messagebox{
+ position:absolute;
+ width:100px;
+ margin-left:30px;
+ border:1px solid #c93;
+ background:#ffc;
+ padding:3px;
+}
+.messageboxok{
+ position:absolute;
+ width:auto;
+ margin-left:25px;
+ border:1px solid #349534;
+ background:#C9FFCA;
+ padding:3px;
+ font-weight:bold;
+ color:#008000;
+}
+.messageboxerror{
+ position:absolute;
+ width:auto;
+ margin-left:30px;
+ border:1px solid #CC0000;
+ background:#F7CBCA;
+ padding:3px;
+ font-weight:bold;
+ color:#CC0000;
+}
+
+A:link {
+color: #3366FF;
+text-decoration: none;
+}
+
+A:visited {
+color: #3366FF;
+text-decoration: none;
+}
+
+A:active {
+color: #3366FF;
+text-decoration: none;
+}
+
+A:hover {
+color: #FF9966;
+text-decoration: none;
+}
+
+TD {
+font-size: 12px;
+font-family : Verdana,Arial;
+}
+
+P {
+font-size: 12px;
+font-family : Verdana,Arial;
+}
+
+TD {
+font-size: 12px;
+font-family : Verdana,Arial;
+color: #CC0000;
+}
+
+P {
+font-size: 12px;
+font-family : Verdana,Arial;
+color: #CC0000; 
+}
+
+HR {
+height: 0;
+border-width: 1px 0 0 0;
+border-style: solid;
+border-color: #006AC8;
+}
+
+A.dark:link {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+A.dark:visited {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+A.dark:active {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+A.dark:hover {
+color: #FF9966;
+text-decoration: none;
+}
+
+TD.smaller {
+font-size: 11px;
+font-family : Verdana;
+color : #CC0000;
+}
+
+P.smaller {
+font-size: 11px;
+font-family : Verdana;
+color : #CC0000;
+}
+
+P.catname {
+text-align: center; 
+margin-top: 0px; 
+margin-bottom: 4px; 
+vertical-align:top;
+}
+
+P.catdesc { 
+margin-top: 0px; 
+margin-bottom: 4px; 
+vertical-align:top;
+}
+
+IMG.catimage { 
+border: 1px solid #000; 
+vertical-align:top; 
+}
+
+TD.catimage { 
+vertical-align:top; 
+}
+
+TD.catname { 
+vertical-align:top; 
+text-align: center; 
+}
+
+TD.catnavigation { 
+vertical-align:middle;
+text-align: left; 
+}
+
+P.catname {
+margin-top: 0px; 
+margin-bottom: 4px; 
+vertical-align:top; 
+text-align: left;
+}
+
+P.catdesc { 
+margin-top: 0px; 
+margin-bottom: 4px; 
+vertical-align:top;
+}
+
+IMG.catimage { 
+border: 1px solid #000; 
+vertical-align:top; 
+}
+
+TD.catimage { 
+vertical-align:top; 
+}
+
+TD.catname { 
+vertical-align:top; 
+text-align: left; 
+}
+
+TD.catnavigation { 
+vertical-align:middle;
+text-align: left; 
+}
+
+TD.mincart {
+font-size: 10px;
+font-family : Verdana;
+}
+
+P.mincart {
+font-size: 10px;
+font-family : Verdana;
+}
+
+span.price {
+color: #FF0000;
+}
+
+span.prodoption {
+font-size: 11px;
+font-family : Verdana;
+color : #FF0000;
+}
+
+span.detailoption {
+font-size: 11px;
+font-family : Verdana;
+color : #FF0000;
+}
+
+span.prodoption {
+font-size: 11px;
+font-family : Verdana;
+color : #FF0000;
+}
+
+span.detailoption {
+font-size: 11px;
+font-family : Verdana;
+color : #FF0000;
+}
+
+td.prodnavigation {
+font-size: 11px;
+font-family : Verdana;
+color : #A0A0A0;
+}
+
+P.pagenums {
+font-size: 12px;
+font-family : Verdana;
+}
+
+SPAN.currpage {
+color: #FF0000;
+font-weight: bold;
+}
+
+SPAN.extracurr {
+font-size: 10px;
+font-family : Verdana;
+color: 666666 
+}
+
+div.prodinstock {
+font-size: 10px;
+font-family : Verdana;
+color: 666666 
+}
+

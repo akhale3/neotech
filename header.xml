@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Piecemaker>
+  <Settings>
+    <imageWidth>800</imageWidth>
+    <imageHeight>533</imageHeight>
+    <segments>10</segments>
+    <tweenTime>2.2</tweenTime>
+    <tweenDelay>0.1</tweenDelay>
+    <tweenType>easeInOutBack</tweenType>
+    <zDistance>0</zDistance>
+    <expand>20</expand>
+    <innerColor>0x111111</innerColor>
+    <textBackground>0x0064C8</textBackground>
+    <shadowDarkness>50</shadowDarkness>
+    <textDistance>25</textDistance>
+    <autoplay>3</autoplay>
+  </Settings>
+  
+  

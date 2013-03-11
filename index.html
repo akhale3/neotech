@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Neotech Computers</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="jquery.js" type="text/javascript" language="javascript"></script>
+<script language="javascript">
+$(document).ready(function()
+{
+	$("#login_form").submit(function()
+	{
+		//remove all the class add the messagebox classes and start fading
+		$("#msgbox").removeClass().addClass('messagebox').text('Validating....').fadeIn(1000);
+		//check the username exists or not from ajax
+		$.post("ajax_login.php",{ user_name:$('#username').val(),password:$('#password').val(),rand:Math.random() } ,function(data)
+        {
+		  if(data=='yes') //if correct login detail
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function()  //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('Logging in...').addClass('messageboxok').fadeTo(900,1,
+              function()
+			  { 
+			  	 //redirect to secure page
+				 document.location='home.php';
+			  });
+			  
+			});
+		  }
+		  else 
+		  {
+		  	$("#msgbox").fadeTo(200,0.1,function() //start fading the messagebox
+			{ 
+			  //add message and change the class of the box and start fading
+			  $(this).html('Invalid credentials').addClass('messageboxerror').fadeTo(900,1);
+			});		
+          }
+				
+        });
+ 		return false; //not to post the  form physically
+	});
+	//now call the ajax also focus move from 
+	$("#password").blur(function()
+	{
+		$("#login_form").trigger('submit');
+	});
+});
+</script>
+</head>
+<body>
+<!-- main -->
+<div id="main">
+<!-- Left side bar -->
+	<div id="LTsidebar">
+		<div id="logo"></div>
+<!-- Quick Search -->
+			<div id="quicksearch">
+				<div id="quickheadRT" class="boxheadRT"><h1>Product Search</h1></div>
+				<div class="boxheadLT"></div>
+					<div class="boxmain">
+						<div class="boxmainRT" style="width:144px">
+							<p class="label">Search for:</p>
+							<input name="search" type="text" size="20" />
+							<span style=" float:left;margin:12px 45px 0"><a href="#"><img src="img/btn_search.jpg" width="62" height="21" alt="" /></a></span>
+							<p><a href="#" class="comlink">Advanced search</a></p>
+						</div>
+					 	<div class="boxmainLT"></div>
+					</div>
+				<div class="boxbottRT"></div>
+				<div id="quickbottLT" class="boxbottLT"></div>
+			</div>
+			<div class="clear"></div>
+<!-- Categories --><div class="inner_copy"></div>
+			<div id="categories">
+				<div id="categorieheadRT" class="boxheadRT"><h1>Categories</h1></div>
+		 		<div class="boxheadLT"></div>
+					<div class="boxmain">
+						<div class="boxmainRT" style="width: 144px;">
+							<ul>
+											<li><a href="#">Hard Drives</a></li>
+											<li><a href="#">Drive Controllers</a></li>
+											<li><a href="#">Motherboards</a></li>
+											<li><a href="#">CD/DVD-ROM</a></li>
+											<li><a href="#">Backup Drives</a></li>
+											<li><a href="#">Video Cards</a></li>
+											<li><a href="#">Power Supplies</a></li>
+											<li><a href="#">PDA/Handheld PC</a></li>
+											<li><a href="#">Projectors</a></li>
+											<li><a href="#">Scanners</a></li>
+											<li><a href="#">Communication</a></li>
+											<li><a href="#">Accessories</a></li>
+											<li><a href="#">PC & Notebooks</a></li>
+											<li><a href="#">Input Devices</a></li>
+											<li><a href="#">Multimedia</a></li>
+											<li><a href="#">Network</a></li>
+											<li><a href="#">Power Protection</a></li>
+											<li><a href="#">Printers</a></li>
+											<li><a href="#">Software</a></li>
+									</ul>
+								</div>
+					 		<div class="boxmainLT"></div>
+						</div>
+						<div class="boxbottRT"></div>
+						<div id="categoriebottLT" class="boxbottLT"></div>
+				</div>
+		</div>
+<!-- Right sidebar -->
+		<div id="RTsidebar">
+			<!--<div id="headder"><p class="label"><a href="#" class="companyname">www.c0mpany.c0m</a> / welcome</p></div>-->
+			<div id="navbar">
+				<ul>
+					<li>New to Neotech? Sign up <a href="register.html">here</a></li><li><span></span></li>
+					<li>Confused? Contact our Tech Support <a href="help.html">here</a></li>
+				</ul>
+			</div>
+		 	<div id="login">
+				<div id="loginheadRT" class="boxheadRT"><h1>Login</h1></div>
+		 		<div class="boxheadLT"></div>
+				<div class="boxmain">
+					<div class="boxmainRT" style="width:218px">
+							<form id="login_form" method="post" action="">
+							<p class="label">User Name: &nbsp;<input id="username" type="text" size="33" /></p>
+							<p class="label">Password: &nbsp;&nbsp;<input id="password"  type="password" size="33" /></p>
+							<span id="msgbox" style="display:none"></span>
+							<br>
+							<span style=" float: left; margin: 10px 90px 0px;"><a href="home.php"><img src="img/login_btn.jpg" width="54" height="21" alt=""/></a></span>
+							</form>
+						</div>
+					 		<div class="boxmainLT"></div>
+						</div>
+						<div class="boxbottRT"></div>
+						<div id="loginbottLT" class="boxbottLT"></div>
+				</div>
+				<!--<div id="add">
+					<div id="addheadRT" class="boxheadRT"><h1>Shipping</h1></div>
+		 		<div class="boxheadLT"></div>
+						<div class="boxmain">
+							<div class="boxmainRT" style="width: 243px;">
+					 			<p class="label">Lorem ipsum dolor:</p>
+								<p class="label2">Maecenas dolor diam, scelerisque sollicitudin elementum sit amet, elementum nec dolor. Quisque lorem turpis, viverra a aliquam ut, volutpat ac erat. Mauris erat ligula, pharetra vel pulvinar sit amet, </p>
+							</div>
+					 		<div class="boxmainLT"></div>
+						</div>
+						<div class="boxbottRT"></div>
+						<div id="addbottLT" class="boxbottLT"></div>
+				</div>-->
+				<div class=" clear"></div>
+		<fieldset>
+			<legend><b>New Products</b></legend><div id="products">
+				<div id="pro"><h2>iPad 2</h2><img src="img/ipad2.jpg" width="187" height="134" alt="" /><p>$499</p><a href="#" id="buyit"></a></div><div id="bigdivider"></div>
+				<div id="pro"><h2>Mac Pro</h2><img src="img/MacPro.jpg" width="188" height="134" alt="" /><p>$2,000</p><a href="#" id="buyit"></a></div><div id="bigdivider"></div>
+				<div id="pro"><h2>iMac</h2><img src="img/imac.jpg" width="181" height="134" alt="" /><p>$1,099</p><a href="#" id="buyit"></a></div><div id="productdivider"></div>
+				<div id="pro"><h2>Asus P6T7</h2><img src="img/asus-motherboard.jpg" width="181" height="130" alt="" /><p>$449</p><a href="#" id="buyit"></a></div><div id="bigdivider"></div>
+				<div id="pro"><h2>Bose dock</h2><img src="img/Bose-Sound-Dock.jpg" width="188" height="134" alt="" /><p>$299</p><a href="#" id="buyit"></a></div><div id="bigdivider"></div>
+				<div id="pro"><h2>HP Printer</h2><img src="img/printer.jpg" width="181" height="134" alt="" /><p>$79</p><a href="#" id="buyit"></a></div>
+			</div>
+		</fieldset>
+		<div id="content">
+			<h4><b>Neotech Computers</b></h4>
+			<p class="normalcon">Welcome to the one-stop solution for all your computer problems. Here, at Neotech Computers, we strive to provide you with all the latest peripheries and assemblies right on your screen. Right from the mammothal CoolerMaster cabinet to the miniscule CMOS battery, name it and we have it. Welcome to 
+            <b>The Digital Utopia.</b></p>
+		</div>
+		<div id="headder"><center>
+	<div class="fleft">Copyright © 2011 Neotech Computers Inc.</div>
+	<div class="fright">
+        	<a href="about.html" class="comlink"> About </a> |
+                    <a href="contact.html" class="comlink"> Contact </a> |    
+                    <a href="legal.html" class="comlink"> Legal </a> |    
+                    <a href="sitemap.html" class="comlink"> Sitemap </a>
+	</div>
+	</div class="fclear"></div>
+</center>
+</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <Image Filename="<%itemName%>">
+    <Text>
+		<headline><%exportDescription%></headline>
+		<break>?</break>
+      <paragraph><%itemCaption%></paragraph>
+	</Text>
+  </Image>
+
